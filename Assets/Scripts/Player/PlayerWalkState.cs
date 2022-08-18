@@ -11,11 +11,15 @@ public class PlayerWalkState : PlayerBaseState
     {
         playerSpeed = player.playerSpeed;
         rigidbody = player.GetComponent<Rigidbody2D>();
+
+        player.animator.SetInteger("State", (int) PlayerStateManager.STATES.WALK);
     }
 
     public override void UpdateState(PlayerStateManager player)
     {
         moveDirection = Input.GetAxisRaw("Horizontal");
+        player.SetSpriteDirection(moveDirection);
+
         if (rigidbody.velocity.y < 0)
         {
             player.ChangeState(player.FallState);

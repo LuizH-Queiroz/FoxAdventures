@@ -11,11 +11,14 @@ public class PlayerFallState : PlayerBaseState
     {
         playerSpeed = player.playerSpeed;
         rigidbody = player.GetComponent<Rigidbody2D>();
+
+        player.animator.SetInteger("State", (int) PlayerStateManager.STATES.FALL);
     }
 
     public override void UpdateState(PlayerStateManager player)
     {
         moveDirection = Input.GetAxisRaw("Horizontal");
+        player.SetSpriteDirection(moveDirection);
 
         player.transform.Translate(moveDirection * playerSpeed * Time.deltaTime, 0, 0);
 

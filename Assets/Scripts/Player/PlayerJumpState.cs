@@ -15,11 +15,14 @@ public class PlayerJumpState : PlayerBaseState
         rigidbody = player.GetComponent<Rigidbody2D>();
 
         rigidbody.velocity = new Vector2(0, jumpForce);
+
+        player.animator.SetInteger("State", (int) PlayerStateManager.STATES.JUMP);
     }
 
     public override void UpdateState(PlayerStateManager player)
     {
         moveDirection = Input.GetAxisRaw("Horizontal");
+        player.SetSpriteDirection(moveDirection);
         player.transform.Translate(moveDirection * playerSpeed * Time.deltaTime, 0, 0);
 
         if (rigidbody.velocity.y < 0)
