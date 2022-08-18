@@ -3,18 +3,24 @@ using UnityEngine;
 public class PlayerWalkState : PlayerBaseState
 {
     float playerSpeed;
+    Rigidbody2D rigidbody;
 
     float moveDirection;
 
     public override void EnterState(PlayerStateManager player)
     {
         playerSpeed = player.playerSpeed;
+        rigidbody = player.GetComponent<Rigidbody2D>();
     }
 
     public override void UpdateState(PlayerStateManager player)
     {
         moveDirection = Input.GetAxisRaw("Horizontal");
-        if (moveDirection == 0)
+        if (rigidbody.velocity.y < 0)
+        {
+            player.ChangeState(player.FallState);
+        }
+        else if (moveDirection == 0)
         {
             player.ChangeState(player.IdleState);
         }
