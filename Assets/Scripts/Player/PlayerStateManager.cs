@@ -54,4 +54,22 @@ public class PlayerStateManager : MonoBehaviour
             sprite.flipX = false;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!(collision.gameObject.tag == "Enemy"))
+        {
+            return;
+        }
+
+        if (currentState.GetType() == typeof(PlayerFallState))
+        {
+            ChangeState(JumpState);
+
+            if (collision.gameObject.GetComponent<Eagle>() != null)
+            {
+                StartCoroutine(collision.gameObject.GetComponent<Eagle>().Die());
+            }
+        }
+    }
 }
