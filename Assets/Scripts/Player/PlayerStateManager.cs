@@ -57,7 +57,7 @@ public class PlayerStateManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!(collision.gameObject.tag == "Enemy"))
+        if (collision.gameObject.tag.Equals("Enemy") == false)
         {
             return;
         }
@@ -69,6 +69,10 @@ public class PlayerStateManager : MonoBehaviour
             if (collision.gameObject.GetComponent<Eagle>() != null)
             {
                 StartCoroutine(collision.gameObject.GetComponent<Eagle>().Die());
+            }
+            else if (collision.gameObject.GetComponent<FrogStateManager>() != null)
+            {
+                StartCoroutine(collision.gameObject.GetComponent<FrogStateManager>().Die());
             }
         }
     }
