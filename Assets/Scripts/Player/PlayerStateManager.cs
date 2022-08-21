@@ -74,6 +74,10 @@ public class PlayerStateManager : MonoBehaviour
             {
                 StartCoroutine(collision.gameObject.GetComponent<FrogStateManager>().Die());
             }
+            else
+            {
+                StartCoroutine(collision.gameObject.GetComponent<Opossum>().Die());
+            }
         }
     }
 }
