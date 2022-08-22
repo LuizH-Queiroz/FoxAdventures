@@ -1019,8 +1019,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557b3630338d90d49a1d01e18d2711bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 50
   playerSpeed: 5
   jumpForce: 14
+  rigidbody: {fileID: 1466141442}
   sprite: {fileID: 1466141440}
   animator: {fileID: 1466141446}
 --- !u!95 &1466141446
