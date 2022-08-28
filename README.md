@@ -12,3 +12,4 @@ This is my final project in development for [CS50's Introduction to Game Develop
 
 - Art:
     - [Ansimuz](https://assetstore.unity.com/packages/2d/characters/sunny-land-103349)
+    - [PaperHatLizard](https://paperhatlizard.itch.io/cryos-mini-gui)

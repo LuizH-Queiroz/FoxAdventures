@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStateManager : MonoBehaviour
 {
     public int maxHealth;
-    int currentHealth;
+    public int currentHealth;
 
     public float playerSpeed;
     public float jumpForce;
