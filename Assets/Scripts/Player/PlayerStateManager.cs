@@ -19,7 +19,8 @@ public class PlayerStateManager : MonoBehaviour
         IDLE,
         WALK,
         JUMP,
-        FALL
+        FALL,
+        ON_HIT
     }
 
     PlayerBaseState currentState;
@@ -27,6 +28,7 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerBaseState WalkState = new PlayerWalkState();
     public PlayerBaseState JumpState = new PlayerJumpState();
     public PlayerBaseState FallState = new PlayerFallState();
+    public PlayerBaseState OnHitState = new PlayerOnHitState();
 
 
 
@@ -67,7 +69,14 @@ public class PlayerStateManager : MonoBehaviour
     {
         currentHealth -= amount;
 
-        // Change to OnTakeDamageState (TODO) or go to Game Over scene (TODO)
+        if (currentHealth > 0)
+        {
+            ChangeState(OnHitState);
+        }
+        else
+        {
+            // TODO: Go to Game Over scene
+        }
     }
 
     public void Heal(int amount)
