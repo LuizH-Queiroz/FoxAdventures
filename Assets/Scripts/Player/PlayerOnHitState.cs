@@ -8,11 +8,13 @@ public class PlayerOnHitState : PlayerBaseState
     {
         startTime = Time.time;
         Bump(player);
+
+        player.animator.SetInteger("State", (int) PlayerStateManager.STATES.ON_HIT);
     }
 
     public override void UpdateState(PlayerStateManager player)
     {
-        if (Time.time - startTime >= 1)
+        if (Time.time - startTime >= 0.8)
         {
             player.ChangeState(player.IdleState);
         }
