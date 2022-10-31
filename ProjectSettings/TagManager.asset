@@ -45,12 +45,12 @@ TagManager:
   - name: Background
     uniqueID: 3457864707
     locked: 0
-  - name: Props
-    uniqueID: 2351101885
-    locked: 0
   - name: Player
     uniqueID: 2984266959
     locked: 0
   - name: Foreground
     uniqueID: 2583423489
+    locked: 0
+  - name: Props
+    uniqueID: 2351101885
     locked: 0

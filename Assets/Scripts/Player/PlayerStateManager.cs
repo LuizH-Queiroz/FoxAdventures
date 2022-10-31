@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStateManager : MonoBehaviour
 {
@@ -75,7 +76,7 @@ public class PlayerStateManager : MonoBehaviour
         }
         else
         {
-            // TODO: Go to Game Over scene
+            SceneManager.LoadScene("GameOver");
         }
     }
 
