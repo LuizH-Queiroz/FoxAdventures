@@ -1,6 +1,14 @@
 # FoxAdventures
 
-This is my final project in development for [CS50's Introduction to Game Development](https://cs50.harvard.edu/games/2018/).
+_This is my final project for [CS50's Introduction to Game Development](https://cs50.harvard.edu/games/2018/)._
+
+FoxAdventures is a 2D, platform game build in [Unity](https://unity.com/) Game Engine, which has one playable scene/level called Play and three simple scenes/screens: Start, GameOver and Victory.
+
+On the Play scene the player wins if he manages to go through the map and reach the house at the end without being killed by the enemies, and loses otherwise.
+
+The player mechanics is mainly walking or jumping. Jumping is important to win the game, as the player can only kill enemies by falling on top of them.
+
+<br>
 
 
 ## Credits
@@ -30,7 +38,7 @@ This is my final project in development for [CS50's Introduction to Game Develop
     <br>
 
 - Important Notes
-    - **I'm not the author of any asset (art, music or sound effects) used in this project**
+    - **I'm not the author/creator of any asset (art, music or sound effect) used in this project**
     - No changes were made in any asset used in this project
     - You can check any asset by clicking its author's name/identifier. Please note that each asset's license is provided along with the author's name/identifier
     - You are free to use, share, modify and build upon this project as long as you give the credits to all of the authors listed in this section (_Credits_), respecting each license's
